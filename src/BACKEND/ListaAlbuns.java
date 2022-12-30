@@ -1,5 +1,6 @@
 package BACKEND;
 
+import java.time.Month;
 import java.util.ArrayList;
 
 public class ListaAlbuns {
@@ -57,6 +58,14 @@ public class ListaAlbuns {
         ArrayList<Album> lista = new ArrayList<>();
         for (Album a : listaAlbuns)
             if(a.getEstadoProducao().equals(estado))
+                lista.add(a);
+        return lista;
+    }
+    
+    public ArrayList<Album> filtrarPorEstadoMes(EstadoProducao estado, Month mes){
+        ArrayList<Album> lista = new ArrayList<>();
+        for (Album a : listaAlbuns)
+            if(a.getEstadoProducao().equals(estado) && a.getDataEdicao().getMonth().equals(mes))
                 lista.add(a);
         return lista;
     }

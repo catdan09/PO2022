@@ -1,18 +1,18 @@
 package BACKEND;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Musico {
+public class Musico extends Utilizador implements Serializable{
     
-    private String name;
     private LocalDate dataNasc;
     private String morada;
     private int nBI;
     private Instrumento instrumento;
     
     //Construtor
-    public Musico(String name, LocalDate dataNasc, String morada, int nBI, Instrumento instrumento) {
-        this.name = name;
+    public Musico(String username, String password, String nome, LocalDate dataNasc, String morada, int nBI, Instrumento instrumento) {
+        super(username, password, nome);
         this.dataNasc = dataNasc;
         this.morada = morada;
         this.nBI = nBI;
@@ -20,10 +20,6 @@ public class Musico {
     }
     
     //Seletores
-    public String getName() {
-        return name;
-    }
-
     public LocalDate getDataNasc() {
         return dataNasc;
     }
@@ -41,10 +37,6 @@ public class Musico {
     }
     
     //Modificadores
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setDataNasc(LocalDate dataNasc) {
         this.dataNasc = dataNasc;
     }
